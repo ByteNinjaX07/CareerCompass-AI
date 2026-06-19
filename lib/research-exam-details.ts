@@ -19,27 +19,46 @@ Find details about:
 ${examName}
 Country: ${country}
 
-Return ONLY JSON.
+Return ONLY VALID JSON.
 
 {
-  description: string,
+  "description": "string",
 
-  minAge: number | null,
-  maxAge: number | null,
+  "minAge": 0,
+  "maxAge": 0,
 
-  education: string,
+  "education": "string",
 
-  nationality: string,
+  "nationality": "string",
 
-  experience: string,
+  "experience": "string",
 
-  physicalRequirements: string,
+  "physicalRequirements": "string",
 
-  attemptsAllowed: string,
+  "attemptsAllowed": "string",
 
-  categoryRelaxation: string,
+  "categoryRelaxation": "string",
 
-  officialUrl: string
+  "officialUrl": "string"
+}
+
+RULES:
+
+- Every field except minAge and maxAge MUST be a plain string.
+- NEVER return objects.
+- NEVER return arrays.
+- NEVER return nested JSON.
+- If information contains multiple categories, combine them into a single text string.
+- Example:
+
+"physicalRequirements":
+"Flying Branch: Medical fitness required. Ground Duty: Standard medical requirements."
+
+NOT:
+
+"physicalRequirements": {
+  "flyingBranch": "...",
+  "groundDuty": "..."
 }
 `;
 let response;

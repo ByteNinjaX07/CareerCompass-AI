@@ -65,8 +65,8 @@ return NextResponse.json(
 
 const details =
 await researchExam(
- country,
- exam.name
+ exam.name,
+  country
 );
 
 
