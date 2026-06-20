@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
@@ -73,6 +72,7 @@ export default function Home() {
   const [chatLoading, setChatLoading] = useState(false);
   const [detailsLoading, setDetailsLoading] = useState(false);
   const [notice, setNotice] = useState("");
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
 
   const chatEndRef = useRef<HTMLDivElement>(null);
 
@@ -375,7 +375,7 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_top_left,rgba(26,93,255,0.26),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(212,175,55,0.16),transparent_28%)]" />
       <div className="pointer-events-none fixed inset-0 shadow-[inset_0_0_55px_rgba(44,136,255,0.45)]" />
 
-      <header className="relative z-10 flex h-19 items-center justify-between border-b border-amber-400/15 bg-[#090d18]/90 px-5 shadow-[0_0_34px_rgba(26,93,255,0.18)] backdrop-blur-xl">
+      <header className="relative z-10 flex h-[76px] items-center justify-between border-b border-amber-400/15 bg-[#090d18]/90 px-5 shadow-[0_0_34px_rgba(26,93,255,0.18)] backdrop-blur-xl">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-amber-300/30 bg-gradient-to-br from-amber-300 to-yellow-600 text-xl font-black text-black shadow-[0_0_22px_rgba(212,175,55,0.35)]">
             C
@@ -699,6 +699,44 @@ export default function Home() {
       {notice && (
         <div className="fixed bottom-12 left-1/2 z-50 -translate-x-1/2 rounded-xl border border-amber-300/20 bg-[#090d18] px-4 py-3 text-sm font-bold text-amber-100 shadow-2xl">
           {notice}
+        </div>
+      )}
+
+      {showDisclaimer && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/72 p-5 backdrop-blur-sm">
+          <div className="w-full max-w-xl rounded-2xl border border-amber-300/20 bg-[#0b0f1a] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.65)]">
+            <div className="mb-4 inline-flex rounded-full border border-amber-300/20 bg-amber-300/10 px-3 py-1 text-[11px] font-black uppercase tracking-wide text-amber-200">
+              Important Disclaimer
+            </div>
+
+            <h2 className="text-2xl font-black text-white">Verify Before You Act</h2>
+
+            <div className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
+              <p>
+                CareerCompass AI provides educational guidance about careers, government jobs,
+                exams, eligibility, and preparation paths. It does not make final eligibility,
+                hiring, legal, financial, or admission decisions.
+              </p>
+
+              <p>
+                AI responses and cached exam information may be incomplete, outdated, or
+                incorrect. Always verify dates, eligibility rules, application requirements, and
+                official notices on the relevant government or exam authority website.
+              </p>
+
+              <p>
+                Any profile details you provide are used only to personalize guidance in this app.
+                Do not enter sensitive personal information unless you are comfortable sharing it.
+              </p>
+            </div>
+
+            <button
+              onClick={() => setShowDisclaimer(false)}
+              className="mt-6 h-11 w-full rounded-xl bg-amber-300 text-sm font-black text-black transition hover:bg-amber-200"
+            >
+              I Understand
+            </button>
+          </div>
         </div>
       )}
 
