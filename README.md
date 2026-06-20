@@ -8,9 +8,7 @@
 
 - **Exam Discovery** — Browse and search competitive exams relevant to your profile and goals
 - **Eligibility Checker** — Understand age limits, qualifications, and other criteria at a glance
-- **Career Path Explorer** — Visualize and explore different career trajectories
 - **AI-Powered Assistance** — Get personalized guidance powered by Google Gemini AI
-- **User Authentication** — Secure sign-in and profile management via Firebase
 - **Responsive UI** — Clean, modern interface built with Tailwind CSS and Lucide icons
 
 ---
@@ -23,9 +21,7 @@
 | Language | TypeScript |
 | Styling | Tailwind CSS v4 |
 | AI | Google Gemini (`@google/genai`) |
-| Auth & Database | Firebase 12 |
-| Validation | Zod |
-| Icons | Lucide React |
+| Database | Firebase 12 |
 
 ---
 
@@ -36,7 +32,6 @@ CareerCompass-AI/
 ├── app/              # Next.js App Router pages and layouts
 ├── lib/              # Utility functions, Firebase config, AI clients
 ├── types/            # Shared TypeScript type definitions
-├── public/           # Static assets
 ├── next.config.ts    # Next.js configuration
 ├── tsconfig.json     # TypeScript configuration
 └── package.json
@@ -45,12 +40,6 @@ CareerCompass-AI/
 ---
 
 ## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- A [Google AI Studio](https://aistudio.google.com/) API key (Gemini)
-- A [Firebase](https://firebase.google.com/) project
 
 ### Installation
 
@@ -103,22 +92,6 @@ npm start
 |---|---|
 | `npm run dev` | Start the development server |
 | `npm run build` | Build the app for production |
-| `npm start` | Start the production server |
-| `npm run lint` | Run ESLint |
-
----
-
-## 🌐 Deployment
-
-The easiest way to deploy is via [Vercel](https://vercel.com/new):
-
-1. Push your code to GitHub
-2. Import the repository in Vercel
-3. Add your environment variables in the Vercel dashboard
-4. Deploy!
-
-Refer to the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more options.
-
 ---
 
 ## 🤝 Contributing
@@ -139,6 +112,8 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
-## 👤 Author
+## 👤 Collaborators
 
 **notReallySouvik** — [GitHub](https://github.com/notReallySouvik)
+**curiousdolphinn** — [GitHub](https://github.com/curiousdolphinn)
+**ByteNinjaX07** — [GitHub](https://github.com/ByteNinjaX07)
